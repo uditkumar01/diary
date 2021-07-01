@@ -1,0 +1,6 @@
+.calendar th {
+  height: 50px;
+  font-size: 1.3rem;
+  color: var(--purple-dark);
+  font-weight: 500;
+}
