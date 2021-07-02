@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { DateProvider } from "./context/DateProvider/DateProvider";
+import { EventProvider } from "./context/EventProvider/EventProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <DateProvider>
-      <App />
+      <EventProvider>
+        <App />
+      </EventProvider>
     </DateProvider>
   </React.StrictMode>,
   document.getElementById("root")
