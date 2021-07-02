@@ -1,8 +1,8 @@
 import { CalendarGridCell } from "../CalendarGridCell/CalendarGridCell";
 import { daysInMonth } from "../../data/months";
-import { isLeapYear } from "../../utils/Utils";
+import { isLeapYear } from "../../utils/utils";
 import { CalendarRowProps } from "./CalendarRow.types";
-import { getCalendarDate } from "../../utils/CalendarUtils/getCalendarDate";
+import { getCalendarDate } from "../../utils/calendarUtils/getCalendarDate";
 import { CalendarDate } from "../../context/DateProvider/DateProvider.types";
 
 export function CalendarRow({

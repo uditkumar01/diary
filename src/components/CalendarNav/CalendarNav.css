@@ -4,7 +4,11 @@
   justify-content: space-between;
 }
 
-.calendar-nav h3 {
-  color: var(--text-dark);
+.calendar-nav > h3 > button {
+  background: none;
+  border: none;
+  font-size: x-large;
+  font-weight: 600;
   cursor: pointer;
+  color: var(--text-dark);
 }
