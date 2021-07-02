@@ -1,17 +1,26 @@
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import "./AddEventModal.css";
 import { IconButton } from "../IconButton/IconButton";
 import { PickTime } from "../PickTime/PickTime";
 import { InputEvent } from "../InputEvent/InputEvent";
 import { Button } from "../Button/Button";
+import { CalendarDate } from "../../context/DateProvider/DateProvider.types";
 
-export type AddEventModalProp = {
+export interface AddEventModalProp {
   setaddEventModal: Dispatch<SetStateAction<boolean>>;
-};
+  dateValue: CalendarDate;
+}
 
 export function AddEventModal({
   setaddEventModal,
+  dateValue,
 }: AddEventModalProp): JSX.Element {
+  const [inputText, setInputText] = useState("");
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setInputText(event.target.value);
+  };
+
   return (
     <div className="setUpEventModal">
       <form className="setUpEventModal-form">
@@ -21,7 +30,7 @@ export function AddEventModal({
         >
           <img src="/images/close.svg" alt="" />
         </IconButton>
-        <InputEvent placeholderText="Add Event" />
+        <InputEvent placeHolder="Add Event" onChange={handleInputChange} />
         <PickTime />
         <PickTime />
         <Button className="block-btn m-0">Add Event</Button>

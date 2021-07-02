@@ -1,15 +1,23 @@
+import { ChangeEvent } from "react";
 import "./InputEvent.css";
 
 export type InputEventType = {
-  placeholderText: string;
+  placeHolder?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const InputEvent = ({
-  placeholderText,
+  placeHolder,
+  onChange,
 }: InputEventType): JSX.Element => {
   return (
     <div className="input-box">
-      <input className="input" type="text" placeholder={placeholderText} />
+      <input
+        className="input"
+        type="text"
+        placeholder={placeHolder}
+        onChange={onChange}
+      />
       <span className="focus-border" />
     </div>
   );

@@ -14,7 +14,9 @@ export function CalendarGridCell({
   };
   return (
     <td className="calendar-date">
-      {addEventModal && <AddEventModal setaddEventModal={setaddEventModal} />}
+      {addEventModal && (
+        <AddEventModal setaddEventModal={setaddEventModal} dateValue={value} />
+      )}
       <IconButton
         className={value?.type ? value.type : `text-muted`}
         onClick={addEvent}
