@@ -2,7 +2,7 @@
   width: calc(100% / 7);
 }
 
-.currentDay {
-  color: #fff;
-  background: var(--purple-light);
+.calendar-date {
+  /* background: greenyellow; */
+  padding: 1rem;
 }

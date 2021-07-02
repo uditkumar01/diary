@@ -23,3 +23,8 @@
 .text-muted {
   color: var(--text-muted);
 }
+
+.currentDay {
+  color: #fff;
+  background: var(--purple-light);
+}
