@@ -21,6 +21,7 @@ export const events = [
 export const EventCard = (): JSX.Element => {
   return (
     <div className="events">
+      <h2>Your Events</h2>
       {events.map((event) => {
         return (
           <div
