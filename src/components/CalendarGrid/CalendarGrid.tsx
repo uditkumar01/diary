@@ -1,12 +1,12 @@
 import "./CalendarGrid.css";
 import { useState } from "react";
 import { CalendarRow } from "../CalendarRow/CalendarRow";
-import { CalendarNav } from "../CalendarNav/CalendarNav";
 import { CalendarWeeks } from "../CalendarWeeks/CalendarWeeks";
 import { predictDay } from "../../utils/Utils";
 import { CalendarDate } from "../CalendarRow/CalendarRow.types";
+import { CalendarNav } from "..";
 
-export function CalendarGrid() {
+export function CalendarGrid(): JSX.Element {
   const currentDate = new Date();
   const predictInitialDay = predictDay(
     1,

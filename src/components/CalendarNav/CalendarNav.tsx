@@ -1,6 +1,6 @@
 import "./CalendarNav.css";
 import { daysInMonth } from "../../data/months";
-import { IconButton } from "../";
+import { IconButton } from "..";
 import { predictDay } from "../../utils/Utils";
 import { CalendarNavProps } from "./CalendarNav.types";
 
@@ -8,8 +8,8 @@ export const CalendarNav = ({
   setDate,
   date,
   setInitialDay,
-}: CalendarNavProps) => {
-  const nextMonth = () => {
+}: CalendarNavProps): JSX.Element => {
+  const nextMonth = (): void => {
     const isNextYearsMonth = date.month > 10 ? 0 : date.month + 1;
     const isNextYear = date.month > 10 ? date.year + 1 : date.year;
 
@@ -23,7 +23,7 @@ export const CalendarNav = ({
     setInitialDay(predictInitialDay);
   };
 
-  const prevMonth = () => {
+  const prevMonth = (): void => {
     const isPreviousYearsMonth = date.month < 1 ? 11 : date.month - 1;
     const isPreviousYear = date.month < 1 ? date.year - 1 : date.year;
 
@@ -39,16 +39,15 @@ export const CalendarNav = ({
     );
     setInitialDay(predictInitialDay);
   };
-  console.log(date.month);
   return (
     <div className="calendar-nav">
-      <IconButton className={"icon-nav-button"} handleClick={() => prevMonth()}>
+      <IconButton className="icon-nav-button" handleClick={() => prevMonth()}>
         <img src="/images/leftArrow.svg" alt="previous-month" />
       </IconButton>
       <h3>
         {daysInMonth[date.month].name} {date.year}
       </h3>
-      <IconButton className={"icon-nav-button"} handleClick={() => nextMonth()}>
+      <IconButton className="icon-nav-button" handleClick={() => nextMonth()}>
         <img src="/images/rightArrow.svg" alt="next-month" />
       </IconButton>
     </div>
