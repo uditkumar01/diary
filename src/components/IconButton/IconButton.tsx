@@ -5,11 +5,12 @@ export function IconButton({
   children,
   className,
   handleClick,
-}: IconButtonProps) {
+}: IconButtonProps): JSX.Element {
   return (
     <button
       onClick={handleClick}
-      className={`icon-button ${className ? className : ""}`}
+      type="button"
+      className={`icon-button ${className}`}
     >
       {children}
     </button>

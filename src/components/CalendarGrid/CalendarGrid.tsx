@@ -6,7 +6,7 @@ import { CalendarWeeks } from "../CalendarWeeks/CalendarWeeks";
 import { predictDay } from "../../utils/Utils";
 import { CalendarDate } from "../CalendarRow/CalendarRow.types";
 
-export function CalendarGrid() {
+export function CalendarGrid(): JSX.Element {
   const currentDate = new Date();
   const predictInitialDay = predictDay(
     1,

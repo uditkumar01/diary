@@ -1,7 +1,7 @@
 import { weeksData } from "../../data/weeks";
 import "./CalendarWeeks.css";
 
-export function CalendarWeeks() {
+export function CalendarWeeks(): JSX.Element {
   return (
     <thead>
       <tr>
