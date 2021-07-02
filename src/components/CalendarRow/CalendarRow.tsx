@@ -2,8 +2,9 @@ import "./CalendarRow.css";
 import { CalendarGridCell } from "../CalendarGridCell/CalendarGridCell";
 import { daysInMonth } from "../../data/months";
 import { isLeapYear } from "../../utils/Utils";
-import { CalendarRowProps, CalendarDate } from "./CalendarRow.types";
+import { CalendarRowProps } from "./CalendarRow.types";
 import { getCalendarDate } from "../../utils/CalendarUtils/getCalendarDate";
+import { CalendarDate } from "../../context/DateProvider/DateProvider.types";
 
 export function CalendarRow({
   rowNumber,

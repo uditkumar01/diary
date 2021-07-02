@@ -1,9 +1,4 @@
-export interface CalendarDate {
-  date: number;
-  month: number;
-  year: number;
-  type?: string;
-}
+import { CalendarDate } from "../../context/DateProvider/DateProvider.types";
 
 export interface CalendarRowProps {
   rowNumber: number;

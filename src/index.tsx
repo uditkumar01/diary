@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
+import { DateProvider } from "./context/DateProvider/DateProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DateProvider>
+      <App />
+    </DateProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

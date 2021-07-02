@@ -1,8 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
-import { CalendarDate } from "../CalendarRow/CalendarRow.types";
+import { Dispatch } from "react";
+import {
+  CalendarDate,
+  DateAction,
+} from "../../context/DateProvider/DateProvider.types";
 
 export interface CalendarNavProps {
   date: CalendarDate;
-  setDate: Dispatch<SetStateAction<CalendarDate>>;
-  setInitialDay: Dispatch<SetStateAction<number>>;
+  dateDispatch: Dispatch<DateAction>;
 }

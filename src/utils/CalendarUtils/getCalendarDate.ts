@@ -1,4 +1,4 @@
-import { CalendarDate } from "../../components/CalendarRow/CalendarRow.types";
+import { CalendarDate } from "../../context/DateProvider/DateProvider.types";
 import { daysInMonth } from "../../data/months";
 
 export function getCalendarDate(

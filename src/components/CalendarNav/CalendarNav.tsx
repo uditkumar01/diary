@@ -5,39 +5,45 @@ import { IconButton } from "../IconButton/IconButton";
 import { daysInMonth } from "../../data/months";
 
 export function CalendarNav({
-  setDate,
+  dateDispatch,
   date,
-  setInitialDay,
 }: CalendarNavProps): JSX.Element {
   const nextMonth = (): void => {
     const isNextYearsMonth = date.month > 10 ? 0 : date.month + 1;
     const isNextYear = date.month > 10 ? date.year + 1 : date.year;
 
-    setDate(() => ({
-      ...date,
-      month: isNextYearsMonth,
-      year: isNextYear,
-    }));
+    dateDispatch({
+      type: "SET_DATE",
+      payload: { date: { ...date, month: isNextYearsMonth, year: isNextYear } },
+    });
 
     const predictInitialDay = predictDay(1, isNextYearsMonth + 1, isNextYear);
-    return setInitialDay(predictInitialDay);
+    dateDispatch({
+      type: "SET_INITIALDAY",
+      payload: { initialDay: predictInitialDay },
+    });
   };
 
   const prevMonth = (): void => {
     const isPreviousYearsMonth = date.month < 1 ? 11 : date.month - 1;
     const isPreviousYear = date.month < 1 ? date.year - 1 : date.year;
 
-    setDate(() => ({
-      ...date,
-      month: isPreviousYearsMonth,
-      year: isPreviousYear,
-    }));
+    dateDispatch({
+      type: "SET_DATE",
+      payload: {
+        date: { ...date, month: isPreviousYearsMonth, year: isPreviousYear },
+      },
+    });
+
     const predictInitialDay = predictDay(
       1,
       isPreviousYearsMonth + 1,
       isPreviousYear
     );
-    return setInitialDay(predictInitialDay);
+    dateDispatch({
+      type: "SET_INITIALDAY",
+      payload: { initialDay: predictInitialDay },
+    });
   };
   return (
     <div className="calendar-nav">
