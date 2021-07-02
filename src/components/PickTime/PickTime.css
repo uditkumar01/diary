@@ -1,0 +1,98 @@
+.pick-time {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.time {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-box-time {
+  position: relative;
+}
+
+.input-time {
+  border: 1px solid #ccc;
+  padding: 7px 14px 9px;
+  transition: 0.4s;
+  width: 46px;
+  outline: #fff;
+}
+
+.input-time ~ .focus-border:before,
+.input-time ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue-color);
+  transition: 0.3s;
+}
+.input-time ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+.input-time ~ .focus-border i:before,
+.input-time ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--blue-color);
+  transition: 0.4s;
+}
+.input-time ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+.input-time:focus ~ .focus-border:before,
+.input-time:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+.input-time:focus ~ .focus-border i:before,
+.input-time:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.3rem;
+  border: solid 2px var(--bg-medium);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #ece0fd;
+}
+
+.meridiem {
+  display: flex;
+  flex-direction: column;
+  color: var(--blue-color);
+  font-weight: 500;
+}
+
+.meridiem-am {
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+.meridiem-pm {
+  border-top: none;
+  border-radius: 0 0 0.4rem 0.4rem;
+}

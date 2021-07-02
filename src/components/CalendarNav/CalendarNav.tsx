@@ -17,7 +17,7 @@ export function CalendarNav({
     <div className="calendar-nav">
       <IconButton
         className="icon-nav-button"
-        handleClick={() => prevMonth({ date, dateDispatch })}
+        onClick={() => prevMonth({ date, dateDispatch })}
       >
         <img src="/images/leftArrow.svg" alt="previous-month" />
       </IconButton>
@@ -31,7 +31,7 @@ export function CalendarNav({
       </h3>
       <IconButton
         className="icon-nav-button"
-        handleClick={() => nextMonth({ date, dateDispatch })}
+        onClick={() => nextMonth({ date, dateDispatch })}
       >
         <img src="/images/rightArrow.svg" alt="next-month" />
       </IconButton>
@@ -48,12 +48,12 @@ export function CalendarNav({
   );
 }
 
-/* <IconButton className="icon-nav-button" handleClick={() => prevMonth()}>
+/* <IconButton className="icon-nav-button" onClick={() => prevMonth()}>
         <img src="/images/leftArrow.svg" alt="previous-month" />
       </IconButton>
       <h3>
         {daysInMonth[date.month].name} {date.year}
       </h3>
-      <IconButton className="icon-nav-button" handleClick={() => nextMonth()}>
+      <IconButton className="icon-nav-button" onClick={() => nextMonth()}>
         <img src="/images/rightArrow.svg" alt="next-month" />
       </IconButton> */
