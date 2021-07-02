@@ -28,3 +28,13 @@
   color: #fff;
   background: var(--purple-light);
 }
+
+.close-button {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0rem;
+  cursor: pointer;
+}

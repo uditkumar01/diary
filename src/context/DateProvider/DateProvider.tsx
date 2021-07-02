@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { dateReducer } from "../../reducer/dateReducer";
-import { predictDay } from "../../utils/Utils";
+import { predictDay } from "../../utils/utils";
 import {
   DataProviderProps,
   InitialDateContext,
