@@ -6,15 +6,16 @@
 }
 
 .event-card {
-  width: 300px;
+  width: 100%;
   display: flex;
   padding: 1rem;
   gap: 1rem;
   align-items: center;
   border-radius: 1rem;
-  /* box-shadow: 3px 2px 50px #ece1e1, -30.03px -30.03px 100px #ffffff; */
-  /* box-shadow: 17.72px 17.72px 39px #ece1e1, -17.72px -17.72px 39px #ffffff; */
-  /* border: 2px solid #F50057;*/
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .event-card-pink {

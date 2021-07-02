@@ -22,7 +22,7 @@ export const ChooseMonthYear = ({
       {choosePreviousYear && (
         <IconButton
           className="icon-nav-button"
-          handleClick={() => choosePreviousYear()}
+          onClick={() => choosePreviousYear()}
         >
           <img src="/images/upArrow.svg" alt="upArrow" />
         </IconButton>
@@ -31,7 +31,7 @@ export const ChooseMonthYear = ({
       {choosePreviousMonth && (
         <IconButton
           className="icon-nav-button"
-          handleClick={() => choosePreviousMonth()}
+          onClick={() => choosePreviousMonth()}
         >
           <img src="/images/upArrow.svg" alt="upArrow" />
         </IconButton>
@@ -40,7 +40,7 @@ export const ChooseMonthYear = ({
       {chooseNextYear && (
         <IconButton
           className="icon-nav-button"
-          handleClick={() => chooseNextYear()}
+          onClick={() => chooseNextYear()}
         >
           <img src="/images/downArrow.svg" alt="downArrow" />
         </IconButton>
@@ -48,7 +48,7 @@ export const ChooseMonthYear = ({
       {chooseNextMonth && (
         <IconButton
           className="icon-nav-button"
-          handleClick={() => chooseNextMonth()}
+          onClick={() => chooseNextMonth()}
         >
           <img src="/images/downArrow.svg" alt="downArrow" />
         </IconButton>

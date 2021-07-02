@@ -4,12 +4,12 @@ import { IconButtonProps } from "./IconButton.types";
 export function IconButton({
   children,
   className,
-  handleClick,
+  onClick,
 }: IconButtonProps): JSX.Element {
   return (
     <button
       type="button"
-      onClick={handleClick}
+      onClick={onClick}
       className={`icon-button ${className}`}
     >
       {children}

@@ -33,7 +33,7 @@ export const SetMonthYear = ({
           } ${date.year}`}</h2>
           <IconButton
             className="close-button"
-            handleClick={() => setChooseMonthYear(false)}
+            onClick={() => setChooseMonthYear(false)}
           >
             <img src="/images/close.svg" alt="Close" />
           </IconButton>
