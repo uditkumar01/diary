@@ -1,0 +1,54 @@
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.event-card {
+  width: 300px;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 1rem;
+  /* box-shadow: 3px 2px 50px #ece1e1, -30.03px -30.03px 100px #ffffff; */
+  /* box-shadow: 17.72px 17.72px 39px #ece1e1, -17.72px -17.72px 39px #ffffff; */
+  /* border: 2px solid #F50057;*/
+}
+
+.event-card-pink {
+  background-color: #f9e6e6;
+  box-shadow: 8.71px 8.71px 50px #fef2f2, -8.71px -8.71px 15px rgb(0 0 0 / 3%);
+}
+
+.event-card-purple {
+  background-color: #e7d5f9;
+  box-shadow: 8.71px 8.71px 50px #e6e6e6, -8.71px -8.71px 15px rgb(0 0 0 / 3%);
+}
+
+.event-card-green {
+  background-color: #d1fae5;
+  box-shadow: 8.71px 8.71px 50px #d1fae5, -8.71px -8.71px 15px rgb(0 0 0 / 3%);
+}
+
+.event-card-icon-purple {
+  background-color: #d9bdf5;
+}
+
+.event-card-icon-green {
+  background-color: #7ff7d9;
+}
+
+.event-card-icon-pink {
+  background-color: #fbcfe8;
+}
+
+.event-card-icon {
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.event-card-icon-img {
+  width: 30px;
+}
