@@ -10,7 +10,7 @@ export const InputEvent = ({
   return (
     <div className="input-box">
       <input className="input" type="text" placeholder={placeholderText} />
-      <span className="focus-border">.</span>
+      <span className="focus-border" />
     </div>
   );
 };
