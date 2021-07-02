@@ -1,11 +1,10 @@
-import { CalendarDate } from "../CalendarRow/CalendarRow.types";
 import "./CalendarGridCell.css";
-import { IconButton } from "..";
+import { IconButton } from "../IconButton/IconButton";
+import { CalendarGridCellProps } from "./CalendarGridCell.types.";
 
-interface CalendarGridCellType {
-  value: CalendarDate;
-}
-export function CalendarGridCell({ value }: CalendarGridCellType): JSX.Element {
+export function CalendarGridCell({
+  value,
+}: CalendarGridCellProps): JSX.Element {
   return (
     <td className="calendar-date">
       <IconButton className={value?.type ? value.type : `text-muted`}>

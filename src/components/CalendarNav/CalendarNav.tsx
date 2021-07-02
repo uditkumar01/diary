@@ -1,14 +1,14 @@
 import "./CalendarNav.css";
-import { daysInMonth } from "../../data/months";
-import { IconButton } from "..";
 import { predictDay } from "../../utils/Utils";
 import { CalendarNavProps } from "./CalendarNav.types";
+import { IconButton } from "../IconButton/IconButton";
+import { daysInMonth } from "../../data/months";
 
-export const CalendarNav = ({
+export function CalendarNav({
   setDate,
   date,
   setInitialDay,
-}: CalendarNavProps): JSX.Element => {
+}: CalendarNavProps): JSX.Element {
   const nextMonth = (): void => {
     const isNextYearsMonth = date.month > 10 ? 0 : date.month + 1;
     const isNextYear = date.month > 10 ? date.year + 1 : date.year;
@@ -20,7 +20,7 @@ export const CalendarNav = ({
     }));
 
     const predictInitialDay = predictDay(1, isNextYearsMonth + 1, isNextYear);
-    setInitialDay(predictInitialDay);
+    return setInitialDay(predictInitialDay);
   };
 
   const prevMonth = (): void => {
@@ -37,7 +37,7 @@ export const CalendarNav = ({
       isPreviousYearsMonth + 1,
       isPreviousYear
     );
-    setInitialDay(predictInitialDay);
+    return setInitialDay(predictInitialDay);
   };
   return (
     <div className="calendar-nav">
@@ -52,4 +52,4 @@ export const CalendarNav = ({
       </IconButton>
     </div>
   );
-};
+}

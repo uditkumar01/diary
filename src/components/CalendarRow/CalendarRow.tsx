@@ -1,5 +1,5 @@
 import "./CalendarRow.css";
-import { CalendarGridCell } from "..";
+import { CalendarGridCell } from "../CalendarGridCell/CalendarGridCell";
 import { daysInMonth } from "../../data/months";
 import { isLeapYear } from "../../utils/Utils";
 import { CalendarRowProps, CalendarDate } from "./CalendarRow.types";

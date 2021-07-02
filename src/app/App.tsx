@@ -1,5 +1,5 @@
 import "../styles.css";
-import { CalendarGrid } from "../components/index";
+import { CalendarGrid } from "../components/CalendarGrid/CalendarGrid";
 
 export default function App(): JSX.Element {
   return (

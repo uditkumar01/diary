@@ -10,7 +10,7 @@ const ODD_DAYS_IN_A_CENTURY = 5;
 
 // program to check leap year
 function isLeapYear(year: number): boolean {
-  // three conditions to find out the leap year
+  //  three conditions to find out the leap year
   return Boolean(!(year % 400) || (!(year % 4) && year % 100));
 }
 
@@ -24,7 +24,6 @@ function getTotalNoOfDays(month: number, year: number): number {
 }
 
 function predictDay(date: number, month: number, year: number): number {
-  // console.log(date, month, year);
   const oddYearsLeft = (year - 1) % NUM;
 
   const noOfCenturies = Math.floor(oddYearsLeft / 100);

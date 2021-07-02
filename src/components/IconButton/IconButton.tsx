@@ -10,7 +10,7 @@ export function IconButton({
     <button
       type="button"
       onClick={handleClick}
-      className={`icon-button ${className || ""}`}
+      className={`icon-button ${className}`}
     >
       {children}
     </button>
