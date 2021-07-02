@@ -4,7 +4,7 @@ import { CalendarRow } from "../CalendarRow/CalendarRow";
 import { CalendarWeeks } from "../CalendarWeeks/CalendarWeeks";
 import { predictDay } from "../../utils/Utils";
 import { CalendarDate } from "../CalendarRow/CalendarRow.types";
-import { CalendarNav } from "..";
+import { CalendarNav } from "../CalendarNav/CalendarNav";
 
 export function CalendarGrid(): JSX.Element {
   const currentDate = new Date();
