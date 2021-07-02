@@ -1,0 +1,23 @@
+.user-card {
+  width: 370px;
+  background: #f7f9fd;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 20px;
+  height: max-content;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.user-card h1 {
+  color: var(--text-dark);
+}
+
+.user-card p {
+  color: grey;
+  font-size: 0.98rem;
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+}

@@ -1,1 +1,1 @@
-export { Button } from "./Button/Button";
+export { UserCard } from "./UserCard/UserCard";

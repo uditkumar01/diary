@@ -1,12 +1,14 @@
 import "../styles.css";
-import { CalendarGrid } from "../components/CalendarGrid/CalendarGrid";
 import { Navbar } from "../components/Navbar/Navbar";
+import { MainGrid } from "../components/MainGrid/MainGrid";
 
 export default function App(): JSX.Element {
   return (
     <div className="App">
       <Navbar />
-      <CalendarGrid />
+      <div className="main">
+        <MainGrid />
+      </div>
     </div>
   );
 }
