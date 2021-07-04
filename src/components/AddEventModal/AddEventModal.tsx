@@ -21,6 +21,12 @@ export function AddEventModal({
     setInputText(event.target.value);
   };
 
+  const addEventHandler = (): void => {
+    if (inputText) {
+      console.log(inputText);
+    }
+  };
+
   return (
     <div className="setUpEventModal">
       <form className="setUpEventModal-form">
@@ -30,10 +36,16 @@ export function AddEventModal({
         >
           <img src="/images/close.svg" alt="" />
         </IconButton>
-        <InputEvent placeHolder="Add Event" onChange={handleInputChange} />
+        <InputEvent
+          placeHolder="Add Event"
+          inputText={inputText}
+          onChange={handleInputChange}
+        />
         <PickTime />
         <PickTime />
-        <Button className="block-btn m-0">Add Event</Button>
+        <Button className="block-btn m-0" onClick={addEventHandler}>
+          Add Event
+        </Button>
       </form>
     </div>
   );
