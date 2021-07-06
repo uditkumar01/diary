@@ -25,8 +25,10 @@ export function Navbar(): JSX.Element {
           </li>
         </ul>
         <div className="nav-extra-link">
-          <Button variant="outline">Sign up</Button>
-          <Button>Login</Button>
+          <Button variant="outline" type="button">
+            Sign up
+          </Button>
+          <Button type="button">Login</Button>
         </div>
       </div>
     </div>

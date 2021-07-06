@@ -6,10 +6,12 @@ export function Button({
   className,
   variant,
   onClick,
+  type,
 }: ButtonProps): JSX.Element {
   return (
     <button
-      type="button"
+      // eslint-disable-next-line react/button-has-type
+      type={type || "button"}
       className={`button ${variant} ${className}`}
       onClick={onClick}
     >

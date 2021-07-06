@@ -5,4 +5,5 @@ export interface ButtonProps {
   variant?: string;
   className?: string;
   onClick?: () => void;
+  type: "button" | "submit" | "reset";
 }

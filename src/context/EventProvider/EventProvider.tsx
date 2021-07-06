@@ -16,7 +16,26 @@ export const EventContext = createContext<InitialEventContext>(
 );
 
 const initialEventState: InitialEventState = {
-  events: null,
+  events: [
+    {
+      eventName: "Meeting Call",
+      from: { hours: 2, minutes: 12 },
+      to: { hours: 2, minutes: 12 },
+      type: "event",
+    },
+    {
+      eventName: "Java Chp1 teach",
+      from: { hours: 2, minutes: 12 },
+      to: { hours: 2, minutes: 12 },
+      type: "public-meeting",
+    },
+    {
+      eventName: "Meeting Call",
+      from: { hours: 2, minutes: 12 },
+      to: { hours: 2, minutes: 12 },
+      type: "private-meeting",
+    },
+  ],
 };
 
 export const EventProvider = ({ children }: DataProviderProps): JSX.Element => {
@@ -24,6 +43,8 @@ export const EventProvider = ({ children }: DataProviderProps): JSX.Element => {
     eventReducer,
     initialEventState
   );
+
+  console.log(eventState);
 
   return (
     <EventContext.Provider value={{ eventState, eventDispatch }}>

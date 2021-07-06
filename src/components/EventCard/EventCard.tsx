@@ -1,30 +1,16 @@
+import { useEvent } from "../../context/EventProvider/EventProvider";
 import "./EventCard.css";
 
-export const events = [
-  {
-    eventName: "Meeting Call",
-    time: "08:00 - 09:00",
-    type: "event",
-  },
-  {
-    eventName: "Java Chp1 teach",
-    time: "05:00 - 07:00",
-    type: "public-meeting",
-  },
-  {
-    eventName: "Meeting Call",
-    time: "12:00 - 03:00",
-    type: "private-meeting",
-  },
-];
-
 export const EventCard = (): JSX.Element => {
+  const { eventState } = useEvent();
+
   return (
     <div className="events">
       <h2>Your Events</h2>
-      {events.map((event) => {
+      {eventState.events?.map((event, index) => {
         return (
           <div
+            key={index.toString()}
             className={`event-card ${
               // eslint-disable-next-line no-nested-ternary
               event.type === "private-meeting"
@@ -57,9 +43,12 @@ export const EventCard = (): JSX.Element => {
                 alt="personal-meeting"
               />
             </div>
-            <div>
+            <div className="event-card-text">
               <h3>{event.eventName}</h3>
-              <p>{event.time}</p>
+              <p>
+                From: {event.from.hours} : {event.from.minutes} To:{" "}
+                {event.to.hours} : {event.to.minutes}
+              </p>
             </div>
           </div>
         );

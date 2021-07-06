@@ -53,3 +53,7 @@
 .event-card-icon-img {
   width: 30px;
 }
+
+.event-card-text {
+  text-align: initial;
+}

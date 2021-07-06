@@ -1,6 +1,6 @@
 .input-box {
   position: relative;
-  max-width: 245px;
+  max-width: 95%;
   width: 100%;
 }
 
@@ -9,7 +9,7 @@
   padding: 0.7rem 0;
   outline: #fff;
   border-bottom: 2px solid #ccc;
-  width: 245px;
+  width: 100%;
   margin: 1rem 0 0 0;
   font-size: initial;
   text-align: initial;

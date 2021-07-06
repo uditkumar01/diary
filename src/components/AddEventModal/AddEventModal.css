@@ -17,7 +17,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
   border-radius: 1rem;
   text-align: center;
+}
+
+.setUpEventModal-header {
+  padding-bottom: 0.5rem;
+  display: flex;
+}
+
+.setUpEventModal-eventType {
+  text-align: start;
+  display: flex;
+  align-items: baseline;
+}
+
+.setUpEventModal-select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  margin: 1rem;
 }

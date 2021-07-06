@@ -1,15 +1,16 @@
-import { ChangeEvent } from "react";
+import { Dispatch } from "react";
+import { AddEventActionState } from "../AddEventModal/addEventReducer";
 import "./InputEvent.css";
 
 export type InputEventType = {
   placeHolder?: string;
   inputText?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  addEventDispatch: Dispatch<AddEventActionState>;
 };
 
 export const InputEvent = ({
   placeHolder,
-  onChange,
+  addEventDispatch,
   inputText,
 }: InputEventType): JSX.Element => {
   return (
@@ -18,8 +19,14 @@ export const InputEvent = ({
         className="input"
         type="text"
         value={inputText}
+        required
         placeholder={placeHolder}
-        onChange={onChange}
+        onChange={(e) => {
+          addEventDispatch({
+            type: "ADD_EVENT_TITLE",
+            payload: { eventTitle: e.target.value },
+          });
+        }}
       />
       <span className="focus-border" />
     </div>

@@ -9,7 +9,9 @@ export function UserCard(): JSX.Element {
         You can now have access to our diary, Lorem ipsum dolor sit amet
         consectetur adipisicing elit.
       </p>
-      <Button className="m-0 block-btn">Add new meet</Button>
+      <Button className="m-0 block-btn" type="button">
+        Add new meet
+      </Button>
     </div>
   );
 }

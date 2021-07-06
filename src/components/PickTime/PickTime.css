@@ -1,8 +1,16 @@
 .pick-time {
   display: flex;
   margin: 1rem 0;
+  grid-gap: 1rem;
   gap: 1rem;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.pick-time-body {
+  display: flex;
+  gap: 1rem;
 }
 
 .time {
@@ -73,10 +81,14 @@ label {
   cursor: pointer;
   padding: 0.3rem;
   border: solid 2px #ccc;
+  /* z-index: 1; */
 }
 
 input[type="radio"] {
-  display: none;
+  color: red;
+  position: relative;
+  top: 1rem;
+  left: 2rem;
 }
 
 input[type="radio"]:checked + label {
