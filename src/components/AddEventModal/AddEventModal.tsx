@@ -1,4 +1,4 @@
-import { SyntheticEvent, useReducer } from "react";
+import { useReducer } from "react";
 import "./AddEventModal.css";
 import { IconButton } from "../IconButton/IconButton";
 import { PickTime } from "../PickTime/PickTime";
@@ -8,8 +8,17 @@ import { AddEventInitialState, addEventReducer } from "./addEventReducer";
 import { AddEventModalProp } from "./AddEventModal.types";
 import { useEvent } from "../../context/EventProvider/EventProvider";
 import { daysInMonth } from "../../data/months";
+import { addEventHandler } from "./utils";
 
 export const eventTypes = ["event", "public-meeting", "private-meeting"];
+
+declare global {
+  interface Window {
+    gapi: any;
+  }
+}
+
+window.gapi = window.gapi || {};
 
 export function AddEventModal({
   setaddEventModal,
@@ -34,54 +43,34 @@ export function AddEventModal({
     addEventInitialState
   );
 
-  const addEventHandler = (e: SyntheticEvent): void => {
-    const checkHours = /^([1-9]|1[012])$/;
-    const checkMins = /^(^[1-5]?[0-9]$)$/;
-
-    e.preventDefault();
-    if (
-      Object.values(addEventState)
-        .map((input) => input.length !== 0)
-        .every(Boolean)
-    ) {
-      if (
-        checkHours.test(addEventState.fromHours.toString()) &&
-        checkMins.test(addEventState.fromMinutes.toString()) &&
-        checkHours.test(addEventState.toHours.toString()) &&
-        checkMins.test(addEventState.toMinutes.toString())
-      ) {
-        eventDispatch({
-          type: "ADD_EVENT",
-          payload: {
-            eventName: addEventState.eventTitle,
-            type: addEventState.eventType,
-            from: {
-              hours: addEventState.fromHours,
-              minutes: addEventState.fromMinutes,
-            },
-            to: {
-              hours: addEventState.toHours,
-              minutes: addEventState.toMinutes,
-            },
-          },
-        });
-      } else {
-        addEventDispatch({
-          type: "SET_MESSAGE",
-          payload: { msg: "Enter time in 1 to 12 format" },
-        });
-      }
-    } else {
-      addEventDispatch({
-        type: "SET_MESSAGE",
-        payload: { msg: "Enter all values" },
-      });
-    }
-  };
+  // eslint-disable-next-line prefer-destructuring
+  const gapi = window.gapi;
+  const CLIENT_ID =
+    "773289570483-jd3gpa7uv2gnm24eood7bh9k9ohts71i.apps.googleusercontent.com";
+  const API_KEY = "AIzaSyADEIHXdxBMTxkYj7e7VDVxiVZtNhU34GM";
+  const DISCOVERY_DOCS = [
+    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+  ];
+  const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
   return (
     <div className="setUpEventModal">
-      <form className="setUpEventModal-form" onSubmit={addEventHandler}>
+      <form
+        className="setUpEventModal-form"
+        onSubmit={(e) =>
+          addEventHandler({
+            e,
+            eventDispatch,
+            addEventState,
+            addEventDispatch,
+            gapi,
+            CLIENT_ID,
+            API_KEY,
+            DISCOVERY_DOCS,
+            SCOPES,
+          })
+        }
+      >
         <div className="setUpEventModal-header">
           <h2>
             {dateValue.date} {daysInMonth[dateValue.month].name}{" "}
